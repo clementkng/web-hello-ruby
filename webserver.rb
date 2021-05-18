@@ -1,15 +1,16 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-require "webrick"
+require 'webrick'
 
-server = WEBrick::HTTPServer.new(:Port => 8000)
+server = WEBrick::HTTPServer.new(Port: 8000)
 
-server.mount_proc '/' do |req, res|
+server.mount_proc '/' do |_req, res|
   res.body = 'Hello, world!'
 end
 
-trap("INT") {
-    server.shutdown
-}
+trap('INT') do
+  server.shutdown
+end
 
 server.start
