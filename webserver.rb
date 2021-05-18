@@ -6,7 +6,7 @@ require 'webrick'
 server = WEBrick::HTTPServer.new(Port: 8000)
 
 server.mount_proc '/' do |_req, res|
-  res.body = 'Hello, world!'
+  res.body = "Hello, world!\n"
 end
 
 trap('INT') do
