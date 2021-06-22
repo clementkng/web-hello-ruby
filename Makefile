@@ -48,7 +48,7 @@ publish-service:
 	    SERVICE_NAME="$(SERVICE_NAME)" \
 	    VERSION="$(VERSION)"\
 	    SERVICE_CONTAINER="$(DOCKERHUB_ID)/$(SERVICE_NAME):$(VERSION)" \
-	    hzn exchange service publish -O $(CONTAINER_CREDS) -P -f horizon/service.definition.json
+	    hzn exchange service publish -O $(CONTAINER_CREDS) -P --public=true -f horizon/service.definition.json
 
 publish-pattern:
 	@ARCH=$(ARCH) \
