@@ -48,14 +48,14 @@ publish-service:
 	    SERVICE_NAME="$(SERVICE_NAME)" \
 	    VERSION="$(VERSION)"\
 	    SERVICE_CONTAINER="$(DOCKERHUB_ID)/$(SERVICE_NAME):$(VERSION)" \
-	    hzn exchange service publish -O $(CONTAINER_CREDS) -P --public=true -f horizon/service.definition.json
+	    hzn exchange service publish -O $(CONTAINER_CREDS) -P --public=true -f service.json
 
 publish-pattern:
 	@ARCH=$(ARCH) \
 	    SERVICE_NAME="$(SERVICE_NAME)" \
 	    VERSION="$(VERSION)"\
 	    PATTERN_NAME="$(PATTERN_NAME)" \
-	    hzn exchange pattern publish -f horizon/pattern.json
+	    hzn exchange pattern publish -f pattern.json
 
 agent-run:
 	hzn register --pattern "${HZN_ORG_ID}/$(PATTERN_NAME)"
